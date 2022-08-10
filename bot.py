@@ -41,15 +41,16 @@ except Exception as ap:
 async def sender_bH(event):
     for i in TO:
         try:
-            string = event.message
+            string = event.message.text
             new_string = string.replace('/', '')
             new_string1 = new_string.replace('|', '')
             new_string2 = new_string1.replace('@', '')
             new_string3 = new_string2.replace('Target Profit', 'TP')
-            new_string4 = new_string3.replace('Closed', 'Close')
+            new_string4 = new_string3.replace('Stop Loss', 'SL')
+            event.message.text = new_string4.replace('Closed', 'Close')
             await BotzHubUser.send_message(
                 i,
-                new_string4
+                event.message
             )
         except Exception as e:
             print(e)

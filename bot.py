@@ -48,7 +48,7 @@ async def sender_bH(event):
             new_string3 = new_string2.replace('Target Profit', 'TP')
             new_string4 = new_string3.replace('Stop Loss', 'SL')
             event.message.text = new_string4.replace('Closed', 'Close')
-            print(event)
+            print(event.message.text)
             await BotzHubUser.send_message(
                 i,
                 event.message

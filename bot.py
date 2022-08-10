@@ -44,7 +44,7 @@ async def sender_bH(event):
             string = event.message
             await BotzHubUser.send_message(
                 i,
-                new_string
+                string
             )
         except Exception as e:
             print(e)

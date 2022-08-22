@@ -42,12 +42,19 @@ async def sender_bH(event):
     for i in TO:
         try:
             string = event.message.text
+            #FRN
             new_string = string.replace('/', '')
-            new_string1 = new_string.replace('|', '')
-            new_string2 = new_string1.replace('@', '')
-            new_string3 = new_string2.replace('Target Profit', 'TP')
-            new_string4 = new_string3.replace('Stop Loss', 'SL')
-            event.message.text = new_string4.replace('Closed', 'Close')
+            new_string = new_string.replace('|', '')
+            new_string = new_string.replace('@', '')
+            new_string = new_string.replace('Target Profit', 'TP')
+            new_string = new_string.replace('Stop Loss', 'SL')
+            new_string = new_string.replace('Closed', 'Close')
+            new_string = new_string.replace('Stop Loss Moved to Entry Price', 'move sl to entry')
+            new_string = new_string.replace('Cancelled', 'Close')
+            #goldio
+            new_string = new_string.replace('Stoploss', 'SL')
+            new_string = new_string.replace('Take Profit', 'TP')
+            event.message.text = new_string
             print(event.message.text)
             await BotzHubUser.send_message(
                 i,
